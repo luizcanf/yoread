@@ -3,7 +3,7 @@
 
 	class Config
 	{
-		private $servidor = "localhost"; //configurações para a comunicação com o banco
+		private $servidor = "localhost";
 		private $user = "root";
 		private $senha = "4556465";
 		private $banco = "yoread";

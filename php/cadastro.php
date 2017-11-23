@@ -42,7 +42,7 @@
 			$_SESSION['user']['email'] = $email;
 			header("Location: inicial.php");
 		}	else {
-			$message = '<h1>Erro ao cadastrar o usu√°rio.</h1>
+			$message = '<h1>Erro ao cadastrar o usu·rio.</h1>
 						<h3>Por favor, <a href="../index.html">Tente Novamente</a></h3>';
 			echo $message;
 		}

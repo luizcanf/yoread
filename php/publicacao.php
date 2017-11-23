@@ -47,7 +47,7 @@
  		</div>
 
  		<div class = "divcomentarios">
- 			<h1 class = "titulocomentarios">Comentários</h1>
+ 			<h1 class = "titulocomentarios">Coment�rios</h1>
  			</br>
  			<div class = "posicoment">
  				<a class = "autorcoment" href="#">Edinaldo Gaspar</a>
@@ -64,7 +64,7 @@
  				<p class = "textocoment">Parceiros, o entendimento das metas propostas apresenta tendências no sentido de aprovar a manutenção das novas proposições.Nunca é demais lembrar o peso e o significado destes problemas, uma vez que o consenso sobre a necessidade de qualificação garante a contribuição de um grupo importante na determinação das diversas correntes de pensamento.</p>
  			</div>
 
- 			<a class = "botaocoment" href="#">Escreva seu comentário</a>
+ 			<a class = "botaocoment" href="#">Escreva seu coment�rio</a>
 
  		</div>
 

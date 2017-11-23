@@ -37,7 +37,7 @@
 		if($result !== null){
 			header("Location: inicial.php");
 		} else {
-			$message = '<h1>Houve um erro ao salvar a publicaÃ§Ã£o</h1>
+			$message = '<h1>Houve um erro ao salvar a publicação</h1>
 						<h3>Por favor, <a href="publicar.php">Tente Novamente</a></h3>';
 			echo $message;
 		}
