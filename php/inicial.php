@@ -1,4 +1,5 @@
 <?php
+	header("Content-Type: text/html; charset=ISO-8859-1",true);
 	require_once("functions.php");
 	seguranca();
 
@@ -14,6 +15,7 @@
 		<title>Yoread</title>
 		<link rel="stylesheet" href="../styleinicial.css" />
 		<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
+		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 	</head>
 
 	<body>
