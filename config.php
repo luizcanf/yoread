@@ -5,15 +5,15 @@
 	{
 		private $servidor = "localhost"; //configurações para a comunicação com o banco
 		private $user = "root";
-		private $senha = "";		
-		private $banco = "";
+		private $senha = "4556465";
+		private $banco = "yoread";
 
 		function conectaBanco() {
 			$con = mysqli_connect($this->servidor, $this->user, $this->senha, $this->banco);
 			//conecta no mwsql faz favor
 
 			if (!$con) {
-			    die('Não foi possível conectar: ' . mysql_error());
+			    die('Não foi possível conectar: ' . mysqli_error());
 			}
 
 			return $con;

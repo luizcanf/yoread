@@ -6,11 +6,11 @@
 		if(checkValues($_POST['titulosinopse'], $_POST['linkfinanciamento'], $_POST['sinopse']))
 		{
 			session_start();
-			$id = $_SESSION['user']['id'];
+			$email = $_SESSION['user']['email'];
 			$titulo = $_POST['titulosinopse'];
 			$link = $_POST['linkfinanciamento'];
 			$sinopse = $_POST['sinopse'];
-			postar($titulo, $link, $sinopse, $email); 
+			postar($titulo, $link, $sinopse, $email);
 		}
 		else {
 			$message = '<h1>Por favor, preencha os campos corretamente.</h1>
@@ -18,7 +18,7 @@
 			echo $message;
 		}
 	}
-	else {		
+	else {
 		//header("Location: ../index.html");
 	}
 
@@ -30,22 +30,16 @@
 		$config = new Config();
 		$conexao = $config->conectaBanco();
 
-		$query = "INSERT INTO yoread.publicacao (link, sinopse, titulo, id_user, cod_publicacao) VALUES ('".$link."', '".$sinopse."', '".$titulo."', '".$fk_user."', NULL)";
-		//falta email ali (tem que por no banco)
-		//email_user ali nos values
+		$query = "INSERT INTO publicacao (link, sinopse, titulo, email, cod_publicacao) VALUES ('".$link."', '".$sinopse."', '".$titulo."', '".$fk_user."', NULL)";
 
 		$result = mysqli_query($conexao, $query) or die('Invalid query: ' . $conexao->error);
 
 		if($result !== null){
-			header("Location: ../inicial.php");
-		}
-		else {
+			header("Location: inicial.php");
+		} else {
 			$message = '<h1>Houve um erro ao salvar a publicação</h1>
 						<h3>Por favor, <a href="publicar.php">Tente Novamente</a></h3>';
+			echo $message;
 		}
-		//echo $message;
-
-		//duvida: adicionar email como campo na tabela de publicação?
 	}
 ?>
-

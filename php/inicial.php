@@ -4,6 +4,7 @@
 
 	$username = $_SESSION['user']['username'];
 	$nome = $_SESSION['user']['nome'];
+	$email = $_SESSION['user']['email'];
 ?>
 
 <!DOCTYPE HTML>
@@ -50,7 +51,7 @@
 		$config = new Config();
 		$conexao = $config->conectaBanco();
 
-		$query = "select titulo, sinopse, id_user, cod_publicacao from yoread.publicacao";
+		$query = "select titulo, sinopse, email, cod_publicacao from publicacao";
 
 		$result = mysqli_query($conexao, $query) or die('Invalid query: ' . $conexao->error);
 
@@ -63,8 +64,8 @@
 				echo "		<div class = \"textoconf\">";
 				echo "			<h1 class = \"titulosinopse\">".$row["titulo"]."</h1>";
 				echo "			<p class = \"sinopse\">".$row["sinopse"]."";
-				echo "			<a class = \"lermais\" href=\"publicacao.php?id".$row["cod_publicacao"]."\">Ler mais...</a></p>";
-				echo "			<a class = \"autor\" href=\"#\">".$row["id_user"]."</a>";
+				echo "			<a class = \"lermais\" href=\"publicacao.php?id=".$row["cod_publicacao"]."\">Ler mais...</a></p>";
+				echo "			<a class = \"autor\" href=\"#\">".$row["email"]."</a>";
 				echo "		</div>";
 				echo "		<div class = \"posicon\">";
 				echo "			<a class = \"icon\" href=\"#\" ><img src = \"add.png\" title=\"favoritar\" border=\"none\" /></a>";
@@ -72,7 +73,14 @@
 				echo "</div>";
 	    }
 		} else {
-			echo "<p>Nenhuma sinopse encontrada.</p>";
+			echo "<div class = \"quadro1\">";
+			echo "		<div class = \"textoconf\">";
+			echo "			<h1 class = \"titulosinopse\">Yoread</h1>";
+			echo "			<p class = \"sinopse\">Nenhuma sinopse encontrada.</p>";
+			echo "		</div>";
+			echo "		<div class = \"posicon\">";
+			echo "		</div>";
+			echo "</div>";
 		}
 		$conexao->close();
 		?>

@@ -14,12 +14,12 @@
 		}
 		else {
 			$message = '<h1>Por favor, preencha os campos corretamente.</h1>
-						<h3><a href="index.php">Tentar Novamente</a></h3>';
+						<h3><a href="../index.html">Tentar Novamente</a></h3>';
 			echo $message;
 		}
 	}
-	else {		
-		//header("Location: ../index.html");
+	else {
+		header("Location: ../index.html");
 	}
 
 	function checkValues($username, $senha) {
@@ -30,7 +30,7 @@
 		$config = new Config();
 		$conexao = $config->conectaBanco();
 
-		$query = "INSERT INTO yoread.users (nome, email, senha, sobrenome, username) VALUES ('".$nome."', '".$email."', '".$senha."', '".$sobrenome."', '".$username."')";
+		$query = "INSERT INTO users (nome, email, senha, sobrenome, username) VALUES ('".$nome."', '".$email."', '".$senha."', '".$sobrenome."', '".$username."')";
 
 		$result = mysqli_query($conexao, $query) or die('Invalid query: ' . $conexao->error);
 
@@ -39,13 +39,12 @@
 			session_start();
 			$_SESSION['user']['username'] = $username;
 			$_SESSION['user']['nome'] = $nome;
-			$_SESSION['user']['sobrenome'] = $sobrenome;
-			header("Location: ../inicial.php");
+			$_SESSION['user']['email'] = $email;
+			header("Location: inicial.php");
+		}	else {
+			$message = '<h1>Erro ao cadastrar o usuário.</h1>
+						<h3>Por favor, <a href="../index.html">Tente Novamente</a></h3>';
+			echo $message;
 		}
-		else {
-			$message = '<h1>Senha ou username Incorretos.</h1>
-						<h3>Por favor, <a href="index.php">Tente Novamente</a></h3>';
-		}
-		//echo $message;
 	}
 ?>

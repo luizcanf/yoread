@@ -14,18 +14,16 @@
 			$username = $_POST['user'];//se tiver preenchido roda
 			$senha = $_POST['senha'];
 			login($username, $senha); //criou um método que faz login
-			//pega a senha do input e salva na variável senha 
-			//pega o user do input e salva na variável username 
+			//pega a senha do input e salva na variável senha
+			//pega o user do input e salva na variável username
 			//jogar la em cima ficaria melhor
-		}
-		else {
+		} else {
 			$message = '<h1>Por favor, preencha os campos corretamente.</h1>
-						<h3><a href="index.php">Tentar Novamente</a></h3>'; //se não tiver mostra isso aqui
+						<h3><a href="../index.html">Tentar Novamente</a></h3>'; //se não tiver mostra isso aqui
 						//pode fazer de outras formas mais bonitinhas
 			echo $message;
 		}
-	}
-	else {		
+	} else {
 		header("Location: ../index.html");
 	}
 
@@ -48,8 +46,8 @@
 		$conexao = $config->conectaBanco(); //roda o metodo que tem no config chamado conecta banco
 		//ele da um return da conexão com o mysql
 
-		$query = "SELECT * FROM yoread.users WHERE username  = '".$username."' AND senha = ".$senha; //tirar esse yoread e configurar la no config pro banco chamar yoread
-		//faz uma busca no banco, um select (banco de dados me mostre coisas, pesquisa), pesquisa tudo que tiver na tabela usuário, sendo que o usuário tem que ser - ao username que te passei e a senha tem que estar igual a senha que te passei 
+		$query = "SELECT * FROM users WHERE username  = '".$username."' AND senha = ".$senha; //tirar esse yoread e configurar la no config pro banco chamar yoread
+		//faz uma busca no banco, um select (banco de dados me mostre coisas, pesquisa), pesquisa tudo que tiver na tabela usuário, sendo que o usuário tem que ser - ao username que te passei e a senha tem que estar igual a senha que te passei
 		//ali em username amaerelo é a que não pode mudar, é a coluna da tabela que tu ta procurando
 
 		$result = mysqli_query($conexao, $query) or die('Invalid query: ' . $conexao->error); //usa pra mim essa conexão que vc criou e essa query que eu fiz ou morre
@@ -60,19 +58,18 @@
 			session_start(); //o numero de colunas que voltaram no resultado é igual a 1 (o mesmo usuário não tem 2 senhas diferentes)
 			//se for = 1 ta certo
 			//jogas os dados que vieram do banco dentro da variável user
-			//deu um session start: cria uma sessão no submarino 
+			//deu um session start: cria uma sessão no submarino
 			$_SESSION['user']['username'] = $user['username'];
 			$_SESSION['user']['nome'] = $user['nome'];
-			$_SESSION['user']['id'] = $user['id']; 
+			$_SESSION['user']['email'] = $user['email'];
 			header("Location: inicial.php");
 			//vai na variavel e procura as colunas da tabela, coloca o que tava na tabela na variável correspondente (email, nome, etc)
 			//armazena isso ai na sessão http
 			//pediu o email pq ele é a chave primaria, e vou precisar dele pra chave estrangeira
 			//usar para todas as paginas pós login
-		}
-		else {
-			$message = '<h1>Senha ou username Incorretos.</h1> 
-						<h3>Por favor, <a href="index.php">Tente Novamente</a></h3>';
+		} else {
+			$message = '<h1>Senha ou username Incorretos.</h1>
+						<h3>Por favor, <a href="../index.html">Tente Novamente</a></h3>';
 						echo $message;
 						//caso não esteja correto, manda essa mensagem
 						//estava ali embaixo comentada caso de erro
