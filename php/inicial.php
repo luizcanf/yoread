@@ -27,12 +27,12 @@
 			</div>
 			<div id = "divavatar">
 				<div id = "posiavatar">
-					<a class = "avatar" href="../perfil.html" ><img src = "avatar.png" title="Perfil" border="none" /></a>
+					<a class = "avatar" href="../perfil.html" ><img src = "../img/avatar.png" title="Perfil" border="none" /></a>
 				</div>
 			</div>
 			<div id = "divpub">
 				<div id = "posipublicon">
-					<a class = "publicon" href="../publicar.html" ><img src = "publicon.png" title="Publicar" border="none" /></a>
+					<a class = "publicon" href="../publicar.html" ><img src = "../img/publicon.png" title="Publicar" border="none" /></a>
 				</div>
 			</div>
 
@@ -70,7 +70,7 @@
 				echo "			<a class = \"autor\" href=\"#\">".$row["email"]."</a>";
 				echo "		</div>";
 				echo "		<div class = \"posicon\">";
-				echo "			<a class = \"icon\" href=\"#\" ><img src = \"add.png\" title=\"favoritar\" border=\"none\" /></a>";
+				echo "			<a class = \"icon\" href=\"#\" ><img src = \"../img/add.png\" title=\"favoritar\" border=\"none\" /></a>";
 				echo "		</div>";
 				echo "</div>";
 	    }
