@@ -13,7 +13,7 @@
 <html lang="pt-BR">
 	<head>
 		<title>Yoread</title>
-		<link rel="stylesheet" href="../styleinicial.css" />
+		<link rel="stylesheet" href="../css/styleinicial.css" />
 		<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
 	</head>
