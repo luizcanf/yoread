@@ -1,4 +1,5 @@
 <?php
+	header("Content-Type: text/html; charset=ISO-8859-1",true);
 	require_once("functions.php");
 	seguranca();
 
@@ -36,12 +37,11 @@
 
  		<div class = "divsinopse">
  			<div class = "positexto">
- 				<h1 class = "titulosinopse">A dona do tempo</h1>
- 				<p class = "sinopse">Por conseguinte, a revolução dos costumes obstaculiza a apreciação da importância das formas de ação. A certificação de metodologias que nos auxiliam a lidar com a estrutura atual da organização auxilia a preparação e a composição dos índices pretendidos. Assim mesmo, a contínua expansão de nossa atividade não pode mais se dissociar dos conhecimentos estratégicos para atingir a excelência. Por outro lado, a complexidade dos estudos efetuados cumpre um papel essencial na formulação de alternativas às soluções ortodoxas. Caros amigos, o entendimento das metas propostas apresenta tendências no sentido de aprovar a manutenção das novas proposições.
-           Nunca é demais lembrar o peso e o significado destes problemas, uma vez que o consenso sobre a necessidade de qualificação garante a contribuição de um grupo importante na determinação das diversas correntes de pensamento. Gostaria de enfatizar que a execução dos pontos do programa deve passar por modificações independentemente do sistema de formação de quadros que corresponde às necessidades. As experiências acumuladas demonstram que a consolidação das estruturas facilita a criação das condições inegavelmente apropriadas. Do mesmo modo, o desenvolvimento contínuo de distintas formas de atuação promove a alavancagem do impacto na agilidade decisória. É claro que o acompanhamento das preferências de consumo possibilita uma melhor visão global do levantamento das variáveis envolvidas. Podemos já vislumbrar o modo pelo qual a adoção de políticas descentralizadoras talvez venha a ressaltar a relatividade dos métodos utilizados na avaliação de resultados. Evidentemente, a determinação clara de objetivos aponta para a melhoria das direções preferenciais no sentido do progresso. </p>
+ 				<h1 class = "titulosinopse">Tem que mostrar o T�tulo da sinopse do BD.</h1>
+ 				<p class = "sinopse">Tem que mostrar a sinopse do BD. </p>
            </div>
            <div class="">
- 				<a class = "botao right" href="#">Diana Mastalli</a>
+ 				<a class = "botao right" href="#">Tem que mostrar o email do usu�rio do BD.</a>
  				<a class = "botao left" href="#">Financiar</a>
  			</div>
  		</div>
@@ -50,19 +50,15 @@
  			<h1 class = "titulocomentarios">Coment�rios</h1>
  			</br>
  			<div class = "posicoment">
- 				<a class = "autorcoment" href="#">Edinaldo Gaspar</a>
- 				<p class = "textocoment">Caros amigos, o entendimento das metas propostas apresenta tendências no sentido de aprovar a manutenção das novas proposições.Nunca é demais lembrar o peso e o significado destes problemas, uma vez que o consenso sobre a necessidade de qualificação garante a contribuição de um grupo importante na determinação das diversas correntes de pensamento.</p>
+ 				<a class = "autorcoment" href="#">Tem que mostrar o email do usu�rio do BD.</a>
+ 				<p class = "textocoment">Tem que mostrar o texto do coment�rio do BD.</p>
  			</div>
  			</br>
- 			<div class = "posicoment">
- 				<a class = "autorcoment" href="#">Rodolfo Berlezi</a>
- 				<p class = "textocoment">Meus caros amigos, o entendimento das metas propostas apresenta tendências no sentido de aprovar a manutenção das novas proposições.Nunca é demais lembrar o peso e o significado destes problemas, uma vez que o consenso sobre a necessidade de qualificação garante a contribuição de um grupo importante na determinação das diversas correntes de pensamento.</p>
+			<div class = "posicoment">
+ 				<a class = "autorcoment" href="#">Tem que mostrar o email do usu�rio do BD.</a>
+ 				<p class = "textocoment">Tem que mostrar o texto do coment�rio do BD. Todos os coment�rios, um por um...</p>
  			</div>
  			</br>
- 			<div class = "posicoment">
- 				<a class = "autorcoment" href="#">Gabizinho</a>
- 				<p class = "textocoment">Parceiros, o entendimento das metas propostas apresenta tendências no sentido de aprovar a manutenção das novas proposições.Nunca é demais lembrar o peso e o significado destes problemas, uma vez que o consenso sobre a necessidade de qualificação garante a contribuição de um grupo importante na determinação das diversas correntes de pensamento.</p>
- 			</div>
 
 			<form action="php/postcomentario.php" id = "postagem" method="post">
 				<input type="text" id="comentario" name="comentario"/>
