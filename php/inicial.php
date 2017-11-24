@@ -27,7 +27,7 @@
 			</div>
 			<div id = "divavatar">
 				<div id = "posiavatar">
-					<a class = "avatar" href="../perfil.html" ><img src = "../img/avatar.png" title="Perfil" border="none" /></a>
+					<a class = "avatar" href="../perfil.html" ><img src = "../img/avatar.png" title="<?php echo $username?>" border="none" /></a>
 				</div>
 			</div>
 			<div id = "divpub">
@@ -37,10 +37,6 @@
 			</div>
 
 			<div style="float: right; margin: -20px 20px auto;">
-				<a href= "../perfil.html">
-					<?php echo $username ?>
-				</a>
-				&nbsp;
 				<a href= "logout.php">
 					Logout
 				</a>

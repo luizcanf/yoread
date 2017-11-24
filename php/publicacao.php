@@ -64,7 +64,11 @@
  				<p class = "textocoment">Parceiros, o entendimento das metas propostas apresenta tendências no sentido de aprovar a manutenção das novas proposições.Nunca é demais lembrar o peso e o significado destes problemas, uma vez que o consenso sobre a necessidade de qualificação garante a contribuição de um grupo importante na determinação das diversas correntes de pensamento.</p>
  			</div>
 
- 			<a class = "botaocoment" href="#">Escreva seu coment�rio</a>
+			<form action="php/postcomentario.php" id = "postagem" method="post">
+				<input type="text" id="comentario" name="comentario"/>
+				<input type="submit" value="comentar" id="btcomentar"/>
+			</form>
+
 
  		</div>
 
