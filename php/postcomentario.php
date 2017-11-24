@@ -1,3 +1,3 @@
 <?php
-# tem que fazer tudo aqui =D
+# TODO: vocês tem que fazer gravar os comentários no BD.
 ?>

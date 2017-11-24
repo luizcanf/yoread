@@ -6,7 +6,28 @@
 	$username = $_SESSION['user']['username'];
 	$nome = $_SESSION['user']['nome'];
 	$email = $_SESSION['user']['email'];
-  $cod_pub = $_GET['id'];
+  $codpub = $_GET['id'];
+
+	require_once("../config.php");
+	$config = new Config();
+	$conexao = $config->conectaBanco();
+
+	$query = "select titulo, sinopse, email from publicacao where cod_publicacao = ".$codpub;
+
+	$result = mysqli_query($conexao, $query) or die('Invalid query: ' . $conexao->error);
+
+	if(mysqli_num_rows($result) == 1){
+		$publi = $result->fetch_array(MYSQLI_ASSOC);
+
+		$titulo = $publi['titulo'];
+		$sinopse = $publi['sinopse'];
+		$autor = $publi['email'];
+
+	} else {
+		$message = '<h1>Erro ao carregar postagem.</h1>
+					<h3>Por favor, <a href="../index.html">Tente Novamente</a></h3>';
+	}
+
 ?>
 
 <!DOCTYPE HTML>
@@ -37,11 +58,11 @@
 
  		<div class = "divsinopse">
  			<div class = "positexto">
- 				<h1 class = "titulosinopse">Tem que mostrar o Título da sinopse do BD.</h1>
- 				<p class = "sinopse">Tem que mostrar a sinopse do BD. </p>
+ 				<h1 class = "titulosinopse"><?php echo $titulo?></h1>
+ 				<p class = "sinopse"><?php echo $sinopse?></p>
            </div>
            <div class="">
- 				<a class = "botao right" href="#">Tem que mostrar o email do usuário do BD.</a>
+ 				<a class = "botao right" href="#"><?php echo $autor?></a>
  				<a class = "botao left" href="#">Financiar</a>
  			</div>
  		</div>
@@ -49,7 +70,14 @@
  		<div class = "divcomentarios">
  			<h1 class = "titulocomentarios">Comentários</h1>
  			</br>
- 			<div class = "posicoment">
+
+			<?php
+			# TODO: vocês tem que fazer carregar os comentários do BD.
+			# DICA: em inicial.php isto é feito para a tabela publicacao
+			
+			$conexao->close();
+ 			?>
+			<div class = "posicoment">
  				<a class = "autorcoment" href="#">Tem que mostrar o email do usuário do BD.</a>
  				<p class = "textocoment">Tem que mostrar o texto do comentário do BD.</p>
  			</div>
@@ -60,15 +88,13 @@
  			</div>
  			</br>
 
+
 			<form action="php/postcomentario.php" id = "postagem" method="post">
 				<input type="text" id="comentario" name="comentario"/>
 				<input type="submit" value="comentar" id="btcomentar"/>
 			</form>
 
-
  		</div>
-
-
 
  		<!-- Linha -->
  		<div id = "linhameio">
