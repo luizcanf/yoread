@@ -21,31 +21,11 @@
 	<body>
 
 		<!-- topo -->
-		<div id = "topo">
-			<div id = "logo">
-				<p>Yoread</p>
-			</div>
-			<div id = "divavatar">
-				<div id = "posiavatar">
-					<a class = "avatar" href="../perfil.html" ><img src = "../img/avatar.png" title="<?php echo $username?>" border="none" /></a>
-				</div>
-			</div>
-			<div id = "divpub">
-				<div id = "posipublicon">
-					<a class = "publicon" href="../publicar.html" ><img src = "../img/publicon.png" title="Publicar" border="none" /></a>
-				</div>
-			</div>
-
-			<div style="float: right; margin: -20px 20px auto;">
-				<a href= "logout.php">
-					Logout
-				</a>
-			</div>
-		</div>
+		<?php include ('navbar.php'); ?>
 
 		<!-- meio -->
 		<?php
-		require_once("../config.php");
+		require_once("config.php");
 		$config = new Config();
 		$conexao = $config->conectaBanco();
 

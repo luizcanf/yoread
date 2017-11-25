@@ -3,7 +3,8 @@
  <html>
  	<head>
  		<title>Yoread</title>
- 		<link rel="stylesheet" href="css/styleperfil.css" />
+    <link rel="stylesheet" href="../css/styleinicial.css" />
+ 		<link rel="stylesheet" href="../css/styleperfil.css" />
  		<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
  	</head>
@@ -11,19 +12,15 @@
  	<body>
 
  		<!-----topo----->
- 		<div id = "topo">
- 			<div id = "logo">
- 				<p>Yoread</p>
- 			</div>
- 		</div>
+ 		<?php include ('navbar.php'); ?>
 
  		<!----perfil---->
  		<div class = "perfil">
  			<div class = "fotoperfil">
  			</div>
  			<div class = "textoperfil">
- 				<h1 class = "nome">Fulana de Tal</h1>
- 				<p class = "bio">   Desta maneira, o acompanhamento das preferências de consumo estende o alcance e a importância do sistema de participação geral. Por outro lado, o desafiador cenário globalizado garante a contribuição de um grupo importante na determinação do remanejamento dos zuadros funcionais. Do mesmo modo, a crescente influência da mídia exige a precisão e a definição das formas de ação.</p>
+ 				<h1 class = "nome"><?php echo $nome?></h1>
+ 				<p class = "bio">   Tem q puxar do BD? Mas n�o existe esse campo na tabela de usu�rio!</p>
  			</div>
  			<div id = "botao">
  			<div id = "posibotao">

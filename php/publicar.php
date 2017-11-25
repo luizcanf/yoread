@@ -3,25 +3,17 @@
 <html>
 	<head>
 		<title>Yoread</title>
-		<link rel="stylesheet" href="css/stylepublicar.css"/>
+		<link rel="stylesheet" href="../css/styleinicial.css" />
+		<link rel="stylesheet" href="../css/stylepublicar.css"/>
 		<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
 		<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 	</head>
 	<body>
 		<!--topo-->
-		<div id = "topo">
-			<div id = "logo">
-				<p>Yoread</p>
-			</div>
-			<div id = "divavatar">
-				<div id = "posiavatar">
-					<a class = "avatar" href="perfil.html" ><img src = "img/avatar.png" title="Perfil" border="none" /></a>
-				</div>
-			</div>
-		</div>
+		<?php include ('navbar.php'); ?>
 
 		<!--meio-->
-		<form action="php/post.php" id = "postagem" method="post">
+		<form action="post.php" id = "postagem" method="post">
 		<div id = "publicar">
 			<p class = "titulo">Escreva sua sinopse</p>
 			<div id = "quadradinhos">

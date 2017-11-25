@@ -1,5 +1,5 @@
 <?php
-	require_once("../config.php");
+	require_once("config.php");
 //o apache é o servidor. Para acessa-lo, digitamos o endereço (ip ou localhost)
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') { //checa se o metodo é post (post é o metodo http que salva). Se for post ele entra no código abaixo.

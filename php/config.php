@@ -10,10 +10,10 @@
 
 		function conectaBanco() {
 			$con = mysqli_connect($this->servidor, $this->user, $this->senha, $this->banco);
-			//conecta no mwsql faz favor
+			//conecta no mysql faz favor
 
 			if (!$con) {
-			    die('NÃ£o foi possÃ­vel conectar: ' . mysqli_error());
+			    die('Não foi possível conectar: ' . mysqli_error());
 			}
 
 			return $con;

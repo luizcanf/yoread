@@ -8,7 +8,7 @@
 	$email = $_SESSION['user']['email'];
   $codpub = $_GET['id'];
 
-	require_once("../config.php");
+	require_once("config.php");
 	$config = new Config();
 	$conexao = $config->conectaBanco();
 
@@ -35,6 +35,7 @@
  <html>
  	<head>
  		<title>Yoread</title>
+		<link rel="stylesheet" href="../css/styleinicial.css" />
  		<link rel="stylesheet" href="../css/stylepublicacao.css" />
  		<link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -44,15 +45,7 @@
  	<body>
 
  		<!-- Topo -->
-
- 		<div id = "topo">
- 			<div id = "logo">
- 				<p>Yoread</p>
- 			</div>
- 			<div class = "posiavatar">
- 				<a class = "avatar" href="perfil.html" ><img src = "avatar.png" title="Perfil" border="none" /></a>
- 			</div>
- 		</div>
+		<?php include ('navbar.php'); ?>
 
  		<!-- Meio -->
 
@@ -74,7 +67,7 @@
 			<?php
 			# TODO: vocês tem que fazer carregar os comentários do BD.
 			# DICA: em inicial.php isto é feito para a tabela publicacao
-			
+
 			$conexao->close();
  			?>
 			<div class = "posicoment">

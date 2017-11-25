@@ -1,5 +1,5 @@
 <?php
-	require_once("../config.php");
+	require_once("config.php");
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -14,7 +14,7 @@
 		}
 		else {
 			$message = '<h1>Por favor, preencha os campos corretamente.</h1>
-						<h3><a href="publicar.html">Tentar Novamente</a></h3>';
+						<h3><a href="publicar.php">Tentar Novamente</a></h3>';
 			echo $message;
 		}
 	}
