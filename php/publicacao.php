@@ -82,7 +82,7 @@
  			</br>
 
 
-			<form action="php/postcomentario.php" id = "postagem" method="post">
+			<form action="postcomentario.php" id = "postagem" method="post">
 				<input type="text" id="comentario" name="comentario"/>
 				<input type="submit" value="comentar" id="btcomentar"/>
 			</form>
