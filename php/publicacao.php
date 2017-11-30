@@ -7,6 +7,7 @@
 	$nome = $_SESSION['user']['nome'];
 	$email = $_SESSION['user']['email'];
   $codpub = $_GET['id'];
+	$_SESSION['cod_publicacao'] = $codpub;
 
 	require_once("config.php");
 	$config = new Config();
@@ -65,16 +66,35 @@
  			</br>
 
 			<?php
-			# TODO: vocês tem que fazer carregar os comentários do BD.
-			# DICA: em inicial.php isto é feito para a tabela publicacao
+			require_once("config.php");
+			$config = new Config();
+			$conexao = $config->conectaBanco();
+			$query = "select descricao, cod_publicacao, cod_comentario, email from comenta where cod_publicacao = ".$_SESSION['cod_publicacao'];
+			$result = mysqli_query($conexao, $query) or die('Invalid, query:'. $conexao->error);
 
-			$conexao->close();
+			$num = 0;
+
+			if($result->num_rows>0){
+				while ($row = $result ->fetch_assoc()) {
+					$num = $num + 1;
+					echo "<div class = \"posicoment\">";
+		 			echo "	<a class = \"autorcoment\" href=\"#\">".$row["email"]."</a>";
+		 			echo "	<p class = \"textocoment\">".$row["descricao"]."</p>";
+		 			echo "</div>";
+					echo "</br>";
+				}
+			} else {
+
+				echo "<div class = \"posicoment\">";
+	 			echo "	<a class = \"autorcoment\" href=\"#\"></a>";
+	 			echo "	<p class = \"textocoment\">Seja o primeiro a comentar!</p>";
+	 			echo "</div>";
+				echo "</br>";
+			}
+
  			?>
-			<div class = "posicoment">
- 				<a class = "autorcoment" href="#">Tem que mostrar o email do usuário do BD.</a>
- 				<p class = "textocoment">Tem que mostrar o texto do comentário do BD.</p>
- 			</div>
- 			</br>
+
+
 			<div class = "posicoment">
  				<a class = "autorcoment" href="#">Tem que mostrar o email do usuário do BD.</a>
  				<p class = "textocoment">Tem que mostrar o texto do comentário do BD. Todos os comentários, um por um...</p>
